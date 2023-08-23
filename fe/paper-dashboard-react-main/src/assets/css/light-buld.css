@@ -1,0 +1,91 @@
+.icon-big {
+    position: relative;
+}
+
+.lightbulb {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbulb.on {
+    color: #ffff00;
+    filter: drop-shadow(0 0 3px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 25px #ffff00)
+}
+
+/* Hiệu ứng ánh sáng */
+.lightbulb::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background-color: rgba(255, 255, 0, 0.5);
+    opacity: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.lightbulb.on::before {
+    opacity: 1;
+}
+
+/* temperature*/
+.cold-effect {
+    animation: freeze 1.5s infinite;
+}
+
+.hot-effect {
+    animation: burn 1s infinite;
+}
+
+@keyframes freeze {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        color: #00bfff;
+        /* Màu chữ đóng băng */
+    }
+
+    50% {
+        transform: translateY(-5px);
+        color: #0080ff;
+        /* Màu chữ đóng băng ở trạng thái giữa */
+    }
+}
+
+@keyframes burn {
+
+    0%,
+    100% {
+        opacity: 1;
+        color: #ff4500;
+        /* Màu chữ lửa cháy */
+    }
+
+    50% {
+        opacity: 0.5;
+        color: #ff8c00;
+        /* Màu chữ lửa cháy ở trạng thái giữa */
+    }
+}
+
+.normal-text {
+    color: #000000;
+    font-weight: normal;
+}
+
+.cold-text {
+    color: #00bfff;
+    font-style: italic;
+    font-size: 50px;
+}
+
+.hot-text {
+    color: #ff4500;
+    font-weight: bold;
+    font-size: 30px;
+}
