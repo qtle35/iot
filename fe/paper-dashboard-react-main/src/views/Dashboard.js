@@ -17,11 +17,12 @@ import {
   dashboard24HoursPerformanceChart,
 } from "variables/charts.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb, faFan } from "@fortawesome/free-solid-svg-icons";
 import "assets/css/light-buld.css";
 
 function Dashboard(props) {
   const [isLightOn, setIsLightOn] = useState(false);
+  const [isFanSpinning, setIsFanSpinning] = useState(false);
   const [imageSrc, setImageSrc] = useState("");
   const [textClass, setTextClass] = useState("");
   const [humidity, setHumidity] = useState(70);
@@ -41,8 +42,11 @@ function Dashboard(props) {
       setTextClass("hot-text hot-effect");
     }
   }, [temperature])
+  const toggleFan = () => {
+    setIsFanSpinning(prevState => !prevState);
+  };
   const calculateHumidityColor = (humidity) => {
-    const hue = (humidity*2.4);
+    const hue = (humidity * 2.4);
     return `hsl(${hue}, 100%, 50%)`;
   };
   const calculateLightColor = (lux) => {
@@ -60,7 +64,7 @@ function Dashboard(props) {
 
         <div className="content">
           <Row>
-            <Col lg="4" md="4" sm="4">
+            <Col lg="4" md="4" sm="4" xs="4">
               <Card className="card-stats">
                 <CardBody>
                   <Row>
@@ -86,7 +90,7 @@ function Dashboard(props) {
                 </CardFooter>
               </Card>
             </Col>
-            <Col lg="4" md="4" sm="4">
+            <Col lg="4" md="4" sm="4" xs="4">
               <Card className="card-stats">
                 <CardBody>
                   <Row>
@@ -112,7 +116,7 @@ function Dashboard(props) {
                 </CardFooter>
               </Card>
             </Col>
-            <Col lg="4" md="4" sm="4">
+            <Col lg="4" md="4" sm="4" xs="4">
               <Card className="card-stats">
                 <CardBody>
                   <Row>
@@ -140,7 +144,7 @@ function Dashboard(props) {
             </Col>
           </Row>
           <Row >
-            <Col md="10">
+            <Col md="10" xs="10">
               <Card>
                 <CardHeader>
                   <CardTitle tag="h5">Users Behavior</CardTitle>
@@ -162,20 +166,27 @@ function Dashboard(props) {
                 </CardFooter>
               </Card>
             </Col>
-            <Col md="2" className="d-flex flex-column align-items-center justify-content-center">
-              <Card className="card-stats mb-5">
+            <Col md="2" xs="2" className="d-flex flex-column align-items-center justify-content-center">
+              <Card className="card-stats">
                 <CardBody>
                   <Row>
-                    <Col md="4" xs="5">
-                      <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-favourite-28 text-primary" />
+                    <Col md="12">
+                      <div className="d-flex justify-content-center">
+                        <p className="card-category">Fan</p>
+                        <p />
                       </div>
                     </Col>
-                    <Col md="8" xs="7">
-                      <div className="numbers">
-                        <p className="card-category">Followers</p>
-                        <CardTitle tag="p">+45K</CardTitle>
-                        <p />
+                  </Row>
+                  <Row>
+                    <Col md="12">
+                      <div className="icon-big text-center icon-warning">
+                        <FontAwesomeIcon
+                          icon={faFan}
+                          spin={isFanSpinning}
+                          style={{ color: "#405e91" }}
+                          className={`fan ${isFanSpinning ? "spin" : ""}`}
+                          onClick={toggleFan}
+                        />
                       </div>
                     </Col>
                   </Row>
@@ -190,16 +201,16 @@ function Dashboard(props) {
               <Card className="card-stats">
                 <CardBody>
                   <Row>
-                    <Col md="12">
+                    <Col md="12" xs="12">
                       <div className="d-flex justify-content-center">
-                        <p className="card-category">LED 2</p>
+                        <p className="card-category">LED</p>
                         {/* <CardTitle tag="p">2</CardTitle> */}
                         <p />
                       </div>
                     </Col>
                   </Row>
                   <Row>
-                    <Col md="12" xs="5">
+                    <Col md="12" xs="12">
                       <div className="icon-big text-center icon-warning">
                         <FontAwesomeIcon
                           icon={faLightbulb}

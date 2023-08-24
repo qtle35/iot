@@ -1,15 +1,17 @@
-.icon-big {
-    position: relative;
-}
+
 
 .lightbulb {
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.3s, filter 0.3s, transform 0.5s ease-in-out;
 }
 
 .lightbulb.on {
     color: #ffff00;
-    filter: drop-shadow(0 0 3px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 25px #ffff00)
+    filter: drop-shadow(0 0 3px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 25px #ffff00);
+}
+.lightbulb:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 /* Hiệu ứng ánh sáng */
@@ -88,4 +90,18 @@
     color: #ff4500;
     font-weight: bold;
     font-size: 30px;
+}
+
+
+/*fan*/
+.fan {
+    transition: transform 0.5s ease-in-out;
+}
+
+.spin {
+    transform: rotate(45deg);
+}
+.fan:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
