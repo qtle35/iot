@@ -1,31 +1,17 @@
-<<<<<<< HEAD
 
 
 .lightbulb {
     cursor: pointer;
     transition: color 0.3s, filter 0.3s, transform 0.5s ease-in-out;
-=======
-.icon-big {
-    position: relative;
-}
-
-.lightbulb {
-    cursor: pointer;
-    transition: color 0.3s;
->>>>>>> 89a5c4ad8dd38e4f3cde953ccc45dba6b06bc4f4
 }
 
 .lightbulb.on {
     color: #ffff00;
-<<<<<<< HEAD
     filter: drop-shadow(0 0 3px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 25px #ffff00);
 }
 .lightbulb:hover {
     cursor: pointer;
     transform: scale(1.1);
-=======
-    filter: drop-shadow(0 0 3px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 25px #ffff00)
->>>>>>> 89a5c4ad8dd38e4f3cde953ccc45dba6b06bc4f4
 }
 
 /* Hiệu ứng ánh sáng */
@@ -104,7 +90,6 @@
     color: #ff4500;
     font-weight: bold;
     font-size: 30px;
-<<<<<<< HEAD
 }
 
 
@@ -119,6 +104,4 @@
 .fan:hover {
     cursor: pointer;
     transform: scale(1.1);
-=======
->>>>>>> 89a5c4ad8dd38e4f3cde953ccc45dba6b06bc4f4
 }
