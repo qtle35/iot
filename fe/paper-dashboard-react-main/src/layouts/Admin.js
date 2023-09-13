@@ -1,13 +1,12 @@
 import React from "react";
 import PerfectScrollbar from "perfect-scrollbar";
 import { Route, Routes, useLocation } from "react-router-dom";
-
-import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 import Dashboard from "views/Dashboard.js";
 import UserPage from "views/User.js";
-
+import HistoryTable from "views/History";
+import Action from "views/Action";
 import routes from "routes.js";
 
 var ps;
@@ -58,6 +57,8 @@ function Admin(props) {
         <Routes>
           <Route path="/dashboard" element={<Dashboard startColor={startColor} endColor={endColor} />} />
           <Route path="/user-page" element={<UserPage />} />
+          <Route path="/history" element={<HistoryTable />} />
+          <Route path="/action" element={<Action />} />
         </Routes>
         {/* <Footer fluid /> */}
       </div>

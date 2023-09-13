@@ -1,15 +1,19 @@
-.icon-big {
-    position: relative;
-}
-
 .lightbulb {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.3s, filter 0.3s, transform 0.5s ease-in-out;
 }
 
 .lightbulb.on {
     color: #ffff00;
-    filter: drop-shadow(0 0 3px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 25px #ffff00)
+    filter: drop-shadow(0 0 3px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 30px #ffff00);
+}
+
+.lightbulb:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 /* Hiệu ứng ánh sáng */
@@ -81,11 +85,40 @@
 .cold-text {
     color: #00bfff;
     font-style: italic;
-    font-size: 50px;
+    /* font-size: 50px; */
 }
 
 .hot-text {
     color: #ff4500;
     font-weight: bold;
-    font-size: 30px;
+    /* font-size: 30px; */
+}
+
+
+/*fan*/
+.fan {
+    transition: transform 0.5s ease-in-out;
+}
+
+.spin {
+    transform: rotate(45deg);
+}
+
+.fan:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/*time*/
+.current-time-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+}
+
+.current-time {
+    font-size: 25px;
+    font-weight: 600;
 }

@@ -1,6 +1,7 @@
 
 import React from "react";
 import "assets/css/fixed.css";
+// import "assets/css/paper-dashboard.css"; 
 
 function FixedPlugin(props) {
   const [classes, setClasses] = React.useState("dropdown show");
@@ -10,13 +11,6 @@ function FixedPlugin(props) {
     } else {
       setClasses("dropdown");
     }
-  };
-  const handleStartColorChange = (color) => {
-    props.setStartColor(color);
-  };
-
-  const handleEndColorChange = (color) => {
-    props.setEndColor(color);
   };
   return (
     <div className="fixed-plugin">
