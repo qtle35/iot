@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
 .lightbulb {
     /* display: flex;
     justify-content: center;
@@ -8,9 +13,14 @@
 
 .lightbulb.on {
     color: #ffff00;
+<<<<<<< HEAD
     filter: drop-shadow(0 0 3px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 30px #ffff00);
 }
 
+=======
+    filter: drop-shadow(0 0 3px #ffff00) drop-shadow(0 0 20px #ffff00) drop-shadow(0 0 25px #ffff00);
+}
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
 .lightbulb:hover {
     cursor: pointer;
     transform: scale(1.1);
@@ -91,7 +101,11 @@
 .hot-text {
     color: #ff4500;
     font-weight: bold;
+<<<<<<< HEAD
     /* font-size: 30px; */
+=======
+    font-size: 30px;
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
 }
 
 
@@ -103,6 +117,7 @@
 .spin {
     transform: rotate(45deg);
 }
+<<<<<<< HEAD
 
 .fan:hover {
     cursor: pointer;
@@ -121,4 +136,9 @@
 .current-time {
     font-size: 25px;
     font-weight: 600;
+=======
+.fan:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
 }

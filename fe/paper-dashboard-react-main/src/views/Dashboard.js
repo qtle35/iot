@@ -19,7 +19,11 @@ import {
   useDashboard24HoursPerformanceChart,
 } from "variables/charts.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+<<<<<<< HEAD
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
+=======
+import { faLightbulb, faFan } from "@fortawesome/free-solid-svg-icons";
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
 import "assets/css/light-buld.css";
 import "assets/css/fixed.css";
 
@@ -89,6 +93,7 @@ function Dashboard(props) {
       const newBui = mqttData[mqttData.length - 1].bui;
       setBui(newBui);
     }
+<<<<<<< HEAD
   }, [mqttData]);
   const toggleFan = () => {
     setIsFanSpinning(prevState => !prevState);
@@ -105,6 +110,12 @@ function Dashboard(props) {
     let blue = parseInt(hex.substring(4, 6), 16);
     socket.emit('RGB',`Red:${red}, G: ${green}, B: ${blue}`);
   }
+=======
+  }, [temperature])
+  const toggleFan = () => {
+    setIsFanSpinning(prevState => !prevState);
+  };
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
   const calculateHumidityColor = (humidity) => {
     const hue = (humidity * 2.4);
     return `hsl(${hue}, 100%, 50%)`;
@@ -220,7 +231,11 @@ function Dashboard(props) {
         <div className="content">
           <h1>{mqttData.humidity}</h1>
           <Row>
+<<<<<<< HEAD
             <Col lg="3" md="3" sm="3" xs="12">
+=======
+            <Col lg="4" md="4" sm="4" xs="4">
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
               <Card className="card-stats">
                 <CardBody>
                   <Row>
@@ -246,6 +261,7 @@ function Dashboard(props) {
                 </CardFooter>
               </Card>
             </Col>
+<<<<<<< HEAD
             <Col lg="3" md="3" sm="3" xs="12">
               <Card className="card-stats">
                 <CardBody>
@@ -275,6 +291,9 @@ function Dashboard(props) {
               </Card>
             </Col>
             <Col lg="3" md="3" sm="3" xs="12">
+=======
+            <Col lg="4" md="4" sm="4" xs="4">
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
               <Card className="card-stats">
                 <CardBody>
                   <Row>
@@ -300,7 +319,11 @@ function Dashboard(props) {
                 </CardFooter>
               </Card>
             </Col>
+<<<<<<< HEAD
             <Col lg="3" md="3" sm="3" xs="12">
+=======
+            <Col lg="4" md="4" sm="4" xs="4">
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
               <Card className="card-stats">
                 <CardBody>
                   <Row>
@@ -328,7 +351,11 @@ function Dashboard(props) {
             </Col>
           </Row>
           <Row >
+<<<<<<< HEAD
             <Col lg="10" md="10" xs="12">
+=======
+            <Col md="10" xs="10">
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
               <Card>
                 <CardHeader>
                   <CardTitle tag="h5">Users Behavior</CardTitle>
@@ -350,13 +377,53 @@ function Dashboard(props) {
                 </CardFooter>
               </Card>
             </Col>
+<<<<<<< HEAD
             <Col lg="2" md="2" xs="8" className="d-flex flex-column align-items-center justify-content-center">
+=======
+            <Col md="2" xs="2" className="d-flex flex-column align-items-center justify-content-center">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col md="12">
+                      <div className="d-flex justify-content-center">
+                        <p className="card-category">Fan</p>
+                        <p />
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md="12">
+                      <div className="icon-big text-center icon-warning">
+                        <FontAwesomeIcon
+                          icon={faFan}
+                          spin={isFanSpinning}
+                          style={{ color: "#405e91" }}
+                          className={`fan ${isFanSpinning ? "spin" : ""}`}
+                          onClick={toggleFan}
+                        />
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="fas fa-sync-alt" /> Update now
+                  </div>
+                </CardFooter>
+              </Card>
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
               <Card className="card-stats">
                 <CardBody>
                   <Row>
                     <Col md="12" xs="12">
                       <div className="d-flex justify-content-center">
+<<<<<<< HEAD
                         <p className="card-category">LED RGB</p>
+=======
+                        <p className="card-category">LED</p>
+                        {/* <CardTitle tag="p">2</CardTitle> */}
+>>>>>>> 4c7b335ed8ed89353acd2ffd84a9ae441db11cdb
                         <p />
                       </div>
                     </Col>
